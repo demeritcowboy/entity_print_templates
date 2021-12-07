@@ -1,0 +1,10 @@
+{
+  "name": "drupal/entity_print_templates",
+  "type": "drupal-module",
+  "description": "Allow PDF templates for Entity Print.",
+  "license": "GPL-2.0+",
+  "require": {
+    "tecnickcom/tcpdf": "6.4.*",
+    "setasign/fpdi": "^2"
+  }
+}
