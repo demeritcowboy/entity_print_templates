@@ -112,9 +112,9 @@ class FpdiEngine extends PrintEngineBase {
     $this->fpdi->AddPage($this->configuration['orientation'], $this->configuration['page_format']);
     if (file_exists($this->configuration['template_path'])) {
       $this->fpdi->setSourceFile($this->configuration['template_path']);
+      $pageId = $this->fpdi->importPage(1);
+      $this->fpdi->useTemplate($pageId, $this->configuration['x_offset'], $this->configuration['y_offset']);
     }
-    $pageId = $this->fpdi->importPage(1);
-    $this->fpdi->useTemplate($pageId, $this->configuration['x_offset'], $this->configuration['y_offset']);
     $this->fpdi->writeHTML($content);
   }
 
