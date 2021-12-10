@@ -84,8 +84,8 @@ class FpdiEngine extends PrintEngineBase {
     ];
     $form['template_path'] = [
       '#type' => 'textfield',
-      '#title' => $this->t('Path to template file'),
-      '#description' => $this->t('Set this to the system path where the PDF engine binary is located.'),
+      '#title' => $this->t('Filesystem path to pdf template file'),
+      '#description' => $this->t('Can leave blank. Can be absolute or relative to the web root. Only the first page is used.'),
       '#default_value' => $this->configuration['template_path'],
     ];
     $form['x_offset'] = [
