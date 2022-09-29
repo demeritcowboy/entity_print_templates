@@ -1,0 +1,5 @@
+services:
+  entity_print_templates.print_css_alter_subscriber:
+    class: Drupal\entity_print_templates\EventSubscriber\EntityPrintTemplatesEntityPrintCssAlterSubscriber
+    tags:
+      - { name: event_subscriber }
