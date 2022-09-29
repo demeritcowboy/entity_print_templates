@@ -57,6 +57,7 @@ class FpdiEngine extends PrintEngineBase {
       'x_offset' => 0,
       'y_offset' => 0,
       'template_path' => '',
+      'custom_css' => '',
     ];
   }
 
@@ -102,6 +103,13 @@ class FpdiEngine extends PrintEngineBase {
       '#default_value' => $this->configuration['y_offset'],
       '#step' => 0.01,
     ];
+    $form['custom_css'] = [
+      '#type' => 'textarea',
+      '#title' => $this->t('Custom css'),
+      '#default_value' => $this->configuration['custom_css'],
+      '#rows' => 10,
+      '#cols' => 40,
+    ];
     return $form;
   }
 
@@ -115,6 +123,8 @@ class FpdiEngine extends PrintEngineBase {
       $pageId = $this->fpdi->importPage(1);
       $this->fpdi->useTemplate($pageId, $this->configuration['x_offset'], $this->configuration['y_offset']);
     }
+    // This seems to be the only way to get css inserted.
+    $content = '<style type="text/css">' . $this->configuration['custom_css'] . '</style>' . $content;
     $this->fpdi->writeHTML($content);
   }
 
