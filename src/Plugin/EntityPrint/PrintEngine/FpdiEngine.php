@@ -40,6 +40,8 @@ class FpdiEngine extends PrintEngineBase {
     $this->fpdi = new Fpdi();
     $this->fpdi->setPrintHeader(FALSE);
     $this->fpdi->setPrintFooter(FALSE);
+    $this->fpdi->setMargins(0,0);
+    $this->fpdi->setAutoPageBreak(FALSE, 0);
   }
 
   /**
