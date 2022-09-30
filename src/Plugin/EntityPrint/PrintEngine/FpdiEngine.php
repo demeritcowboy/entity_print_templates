@@ -38,6 +38,8 @@ class FpdiEngine extends PrintEngineBase {
   public function __construct(array $configuration, $plugin_id, $plugin_definition, ExportTypeInterface $export_type) {
     parent::__construct($configuration, $plugin_id, $plugin_definition, $export_type);
     $this->fpdi = new Fpdi();
+    $this->fpdi->setPrintHeader(FALSE);
+    $this->fpdi->setPrintFooter(FALSE);
   }
 
   /**
