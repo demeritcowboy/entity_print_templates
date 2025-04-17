@@ -4,7 +4,7 @@
   "description": "Allow PDF templates for Entity Print.",
   "license": "GPL-2.0+",
   "require": {
-    "tecnickcom/tcpdf": "6.4.*",
+    "tecnickcom/tcpdf": "^6",
     "setasign/fpdi": "^2"
   }
 }
